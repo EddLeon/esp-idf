@@ -1,6 +1,11 @@
 .config
 *.o
 *.pyc
+*.a
+*.o
+*.old
+*.swp
+*.swo
 
 # gtags
 GTAGS
@@ -58,3 +63,4 @@ coverage.info
 coverage_report/
 
 test_multi_heap_host
+
