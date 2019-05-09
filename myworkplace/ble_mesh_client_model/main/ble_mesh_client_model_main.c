@@ -41,7 +41,7 @@ static uint16_t node_app_idx = ESP_BLE_MESH_KEY_UNUSED;
 static uint8_t remote_onoff = LED_OFF;
 
 /* The remote node address shall be input through UART1, see board.c */
-uint16_t remote_addr = 0x05;//ESP_BLE_MESH_ADDR_UNASSIGNED;
+uint16_t remote_addr = ESP_BLE_MESH_ADDR_UNASSIGNED;
 
 static esp_ble_mesh_client_t onoff_client;
 
@@ -117,6 +117,8 @@ static esp_ble_mesh_prov_t provision = {
 #endif
 };
 
+void periodic_task(void *pvParameter);
+
 static int output_number(esp_ble_mesh_output_action_t action, uint32_t number)
 {
     board_output_number(action, number);
@@ -128,6 +130,7 @@ static void prov_complete(uint16_t net_idx, uint16_t addr)
     ESP_LOGI(TAG, "net_idx: 0x%04x, addr: 0x%04x", net_idx, addr);
     board_prov_complete();
     node_net_idx = net_idx;
+    //xTaskCreate(&periodic_task, "periodic_task,", 2048, NULL, 4, NULL);
 }
 
 static void gen_onoff_get_handler(esp_ble_mesh_model_t *model,
@@ -194,6 +197,8 @@ static void gen_onoff_set_handler(esp_ble_mesh_model_t *model,
     prev_onoff = led->previous;
     led->current = data[0];
     remote_onoff = led->current;
+
+    ESP_LOGI(TAG, "%s, addr 0x%02x onoff 0x%02x", __func__, model->element->element_addr, led->current);
 
     board_led_operation(led->pin, led->current);
 
@@ -304,7 +309,7 @@ static esp_err_t esp_ble_mesh_set_msg_common(esp_ble_mesh_client_common_param_t 
     common->model = model;
     common->ctx.net_idx = node_net_idx;
     common->ctx.app_idx = node_app_idx;
-    common->ctx.addr = remote_addr;
+    common->ctx.addr =  0x0005;//remote_addr;//
     common->ctx.send_ttl = MSG_SEND_TTL;
     common->ctx.send_rel = MSG_SEND_REL;
     common->msg_timeout = MSG_TIMEOUT;
@@ -515,6 +520,37 @@ static esp_err_t bluetooth_init(void)
     }
 
     return ret;
+}
+
+void periodic_task(void *pvParameter){
+    	esp_err_t err;
+	//uint8_t data[] = {0xAA, 0XAA};
+	uint8_t data = 0xAA;
+        esp_ble_mesh_generic_client_set_state_t set_state = {0};
+	esp_ble_mesh_client_common_param_t common = {0};
+//	remote_addr = 0x0005;
+       	while(1){
+//		remote_addr = 0x06;
+		ESP_LOGI(TAG, "periodic_task executed");
+/*	 	err = esp_ble_mesh_model_publish(&root_models[1], ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_STATUS,
+                                         1, &data, ROLE_NODE);
+		if (err != ESP_OK) {
+			ESP_LOGE(TAG, "%s: failed", __func__);
+			break;
+		}
+		*/
+		//err = esp_ble_mesh_model_publish(onoff_client.model, ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET, 1, &data, ROLE_NODE);
+		//esp_ble_mesh_set_msg_common(&common, &set_state, onoff_client.model,ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET, 0xAA);
+		esp_ble_mesh_set_msg_common(&common, &set_state, onoff_client.model,ESP_BLE_MESH_MODEL_OP_GEN_ONOFF_SET, remote_onoff);
+                err = esp_ble_mesh_generic_client_set_state(&common, &set_state);
+                if (err != ESP_OK) {
+			ESP_LOGE(TAG, "%s: Generic OnOff Set failed", __func__);
+		//	break;
+		}
+
+		vTaskDelay(1000/portTICK_PERIOD_MS);
+	}
+    vTaskDelete(NULL);
 }
 
 void app_main(void)

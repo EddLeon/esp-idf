@@ -1101,7 +1101,7 @@ END GROUP
  *(.jcr)
                 0x000000003fff001c                _data_end = ABSOLUTE (.)
 
-.dram0.rodata   0x000000003fff001c     0x16fc
+.dram0.rodata   0x000000003fff001c     0x1704
                 0x000000003fff001c                _rodata_start = ABSOLUTE (.)
  *(.rodata)
  .rodata        0x000000003fff001c       0x14 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
@@ -1111,87 +1111,87 @@ END GROUP
                 0x000000003fff0038       0x3b /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/main/libmain.a(bootloader_start.o)
  *fill*         0x000000003fff0073        0x1 
  .rodata.str1.4
-                0x000000003fff0074      0x3ba /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
-                                        0x3c2 (size before relaxing)
- *fill*         0x000000003fff042e        0x2 
+                0x000000003fff0074      0x3c2 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                                        0x3ca (size before relaxing)
+ *fill*         0x000000003fff0436        0x2 
  .rodata.__func__$4370
-                0x000000003fff0430       0x10 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
+                0x000000003fff0438       0x10 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_init.o)
  .rodata.str1.4
-                0x000000003fff0440      0x5a5 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
+                0x000000003fff0448      0x5a5 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_utility.o)
                                         0x5ad (size before relaxing)
- *fill*         0x000000003fff09e5        0x3 
+ *fill*         0x000000003fff09ed        0x3 
  .rodata.str1.4
-                0x000000003fff09e8      0x163 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
- *fill*         0x000000003fff0b4b        0x1 
+                0x000000003fff09f0      0x163 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(flash_partitions.o)
+ *fill*         0x000000003fff0b53        0x1 
  .rodata.str1.4
-                0x000000003fff0b4c      0x47a /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
+                0x000000003fff0b54      0x47a /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(esp_image_format.o)
                                         0x4ba (size before relaxing)
- *fill*         0x000000003fff0fc6        0x2 
+ *fill*         0x000000003fff0fce        0x2 
  .rodata.str1.4
-                0x000000003fff0fc8       0xc8 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+                0x000000003fff0fd0       0xc8 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
  .rodata.padding$3883
-                0x000000003fff1090       0x40 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+                0x000000003fff1098       0x40 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
  .rodata.__func__$3879
-                0x000000003fff10d0       0x19 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- *fill*         0x000000003fff10e9        0x3 
+                0x000000003fff10d8       0x19 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+ *fill*         0x000000003fff10f1        0x3 
  .rodata.__func__$3859
-                0x000000003fff10ec       0x17 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
- *fill*         0x000000003fff1103        0x1 
+                0x000000003fff10f4       0x17 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_sha.o)
+ *fill*         0x000000003fff110b        0x1 
  .rodata.str1.4
-                0x000000003fff1104      0x28e /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
- *fill*         0x000000003fff1392        0x2 
+                0x000000003fff110c      0x28e /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/bootloader_support/libbootloader_support.a(bootloader_flash.o)
+ *fill*         0x000000003fff139a        0x2 
  .rodata.str1.4
-                0x000000003fff1394      0x251 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
- *fill*         0x000000003fff15e5        0x3 
+                0x000000003fff139c      0x251 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
+ *fill*         0x000000003fff15ed        0x3 
  .rodata.rtc_clk_xtal_freq_estimate
-                0x000000003fff15e8       0x64 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
+                0x000000003fff15f0       0x64 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
  .rodata.rtc_clk_cpu_freq_value
-                0x000000003fff164c       0x14 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
+                0x000000003fff1654       0x14 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
  .rodata.__func__$2844
-                0x000000003fff1660       0x17 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
- *fill*         0x000000003fff1677        0x1 
+                0x000000003fff1668       0x17 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
+ *fill*         0x000000003fff167f        0x1 
  .rodata.__func__$2829
-                0x000000003fff1678       0x15 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
- *fill*         0x000000003fff168d        0x3 
+                0x000000003fff1680       0x15 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_clk.o)
+ *fill*         0x000000003fff1695        0x3 
  .rodata.str1.4
-                0x000000003fff1690       0x70 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_time.o)
+                0x000000003fff1698       0x70 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_time.o)
  .rodata.__func__$1789
-                0x000000003fff1700       0x15 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_time.o)
+                0x000000003fff1708       0x15 /home/edd/esp/esp-idf/myworkplace/ble_mesh_client_model/build/bootloader/soc/libsoc.a(rtc_time.o)
  *(.gnu.linkonce.r.*)
  *(.rodata1)
-                0x000000003fff1715                __XT_EXCEPTION_TABLE_ = ABSOLUTE (.)
+                0x000000003fff171d                __XT_EXCEPTION_TABLE_ = ABSOLUTE (.)
  *(.xt_except_table)
  *(.gcc_except_table)
  *(.gnu.linkonce.e.*)
  *(.gnu.version_r)
  *(.eh_frame)
-                0x000000003fff1718                . = ((. + 0x3) & 0xfffffffffffffffc)
- *fill*         0x000000003fff1715        0x3 
-                0x000000003fff1718                __init_array_start = ABSOLUTE (.)
+                0x000000003fff1720                . = ((. + 0x3) & 0xfffffffffffffffc)
+ *fill*         0x000000003fff171d        0x3 
+                0x000000003fff1720                __init_array_start = ABSOLUTE (.)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *(.ctors)
-                0x000000003fff1718                __init_array_end = ABSOLUTE (.)
+                0x000000003fff1720                __init_array_end = ABSOLUTE (.)
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *(.dtors)
-                0x000000003fff1718                __XT_EXCEPTION_DESCS_ = ABSOLUTE (.)
+                0x000000003fff1720                __XT_EXCEPTION_DESCS_ = ABSOLUTE (.)
  *(.xt_except_desc)
  *(.gnu.linkonce.h.*)
-                0x000000003fff1718                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
+                0x000000003fff1720                __XT_EXCEPTION_DESCS_END__ = ABSOLUTE (.)
  *(.xt_except_desc_end)
  *(.dynamic)
  *(.gnu.version_d)
-                0x000000003fff1718                _rodata_end = ABSOLUTE (.)
-                0x000000003fff1718                _lit4_start = ABSOLUTE (.)
+                0x000000003fff1720                _rodata_end = ABSOLUTE (.)
+                0x000000003fff1720                _lit4_start = ABSOLUTE (.)
  *(*.lit4)
  *(.lit4.*)
  *(.gnu.linkonce.lit4.*)
-                0x000000003fff1718                _lit4_end = ABSOLUTE (.)
-                0x000000003fff1718                . = ALIGN (0x4)
-                0x000000003fff1718                _heap_start = ABSOLUTE (.)
+                0x000000003fff1720                _lit4_end = ABSOLUTE (.)
+                0x000000003fff1720                . = ALIGN (0x4)
+                0x000000003fff1720                _heap_start = ABSOLUTE (.)
                 [!provide]                        PROVIDE (abort, 0x4000bba4)
                 [!provide]                        PROVIDE (Add2SelfBigHex256, 0x40015b7c)
                 [!provide]                        PROVIDE (AddBigHex256, 0x40015b28)

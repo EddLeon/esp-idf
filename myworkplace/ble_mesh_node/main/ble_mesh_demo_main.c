@@ -171,6 +171,8 @@ static void gen_onoff_set_handler(esp_ble_mesh_model_t *model,
     prev_onoff = led->previous;
     led->current = data[0];
 
+    ESP_LOGI(TAG, "%s, addr 0x%02x onoff 0x%02x", __func__, model->element->element_addr, led->current);
+
     board_led_operation(led->pin, led->current);
 
     send_data = led->current;
@@ -268,10 +270,6 @@ static void esp_ble_mesh_model_cb(esp_ble_mesh_model_cb_event_t event, esp_ble_m
 {
     switch (event) {
     case ESP_BLE_MESH_MODEL_OPERATION_EVT: {
-	/*	Server Model receives Get Status or Set Status from Client Model;
-		Client Model receives Status State from Server Model.
-	     */
-	ESP_LOGI(TAG, "<==== ESP BLE MESH MODEL OPERATION EVENT CALLED ====>");
         if (!param->model_operation.model || !param->model_operation.model->op || !param->model_operation.ctx) {
             ESP_LOGE(TAG, "ESP_BLE_MESH_MODEL_OPERATION_EVT parameter is NULL");
             return;

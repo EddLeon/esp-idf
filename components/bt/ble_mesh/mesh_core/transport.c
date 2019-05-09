@@ -519,7 +519,14 @@ int bt_mesh_trans_send(struct bt_mesh_net_tx *tx, struct net_buf_simple *msg,
             BT_ERR("%s: get app key fail", __func__);
             return -EINVAL;
         }
-
+	/*BT_ERR("APP KEY WORKED! >  0x%04x",(app_key->keys[1].val[1]<<8)+app_key->keys[1].val[0]);
+	BT_ERR("APP KEY WORKED! >  0x%04x",(app_key->keys[0].val[1]<<8)+app_key->keys[0].val[0]);
+	int i;
+	for(i=0; i<16; i++){
+		BT_ERR("0x%02x",app_key->keys[0].val[i]);
+	}
+	BT_ERR("PEPE");
+	*/
         if (tx->sub->kr_phase == BT_MESH_KR_PHASE_2 &&
                 app_key->updated) {
             key = app_key->keys[1].val;
