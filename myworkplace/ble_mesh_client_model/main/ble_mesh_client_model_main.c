@@ -41,7 +41,7 @@ static uint16_t node_app_idx = ESP_BLE_MESH_KEY_UNUSED;
 static uint8_t remote_onoff = LED_OFF;
 
 /* The remote node address shall be input through UART1, see board.c */
-uint16_t remote_addr = ESP_BLE_MESH_ADDR_UNASSIGNED;
+uint16_t remote_addr = 0x0005;//ESP_BLE_MESH_ADDR_UNASSIGNED;
 
 static esp_ble_mesh_client_t onoff_client;
 
@@ -309,7 +309,7 @@ static esp_err_t esp_ble_mesh_set_msg_common(esp_ble_mesh_client_common_param_t 
     common->model = model;
     common->ctx.net_idx = node_net_idx;
     common->ctx.app_idx = node_app_idx;
-    common->ctx.addr =  0x0005;//remote_addr;//
+    common->ctx.addr =  remote_addr;
     common->ctx.send_ttl = MSG_SEND_TTL;
     common->ctx.send_rel = MSG_SEND_REL;
     common->msg_timeout = MSG_TIMEOUT;

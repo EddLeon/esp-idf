@@ -6,6 +6,9 @@
 *.old
 *.swp
 *.swo
+*.bin
+*.elf
+*.map
 
 # gtags
 GTAGS

@@ -438,7 +438,7 @@ static void esp_ble_mesh_config_client_cb(esp_ble_mesh_cfg_client_cb_event_t eve
                 ESP_LOGE(TAG, "%s: Generic OnOff Get failed", __func__);
                 return;
             }
-    	    xTaskCreate(&periodic_task, "periodic_task,", 2048, NULL, 4, NULL);
+    	    //xTaskCreate(&periodic_task, "periodic_task,", 2048, NULL, 4, NULL);
             break;
         }
         default:
@@ -689,7 +689,7 @@ void periodic_task(void *pvParameter){
 	uint8_t data = 0xAA;
         esp_ble_mesh_generic_client_set_state_t set_state = {0};
 	esp_ble_mesh_client_common_param_t common = {0};
-	uint16_t addr = 0x0006;
+	uint16_t addr = 0x0005;
 	ESP_LOGI(TAG,"%s PERIODIC TASK ADDR: 0x%04x",__func__,addr);
         node = esp_ble_mesh_get_node_info(addr);
 
